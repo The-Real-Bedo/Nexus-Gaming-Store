@@ -12,6 +12,9 @@
  .container{    /* ---> Global */
     width: 85%;
 }
+/* body{
+    background-color: rgb(14, 14, 62);
+} */
 
 header{
     background-image: -webkit-linear-gradient(rgb(0, 17, 60),rgb(17, 5, 49),rgb(0, 0, 0));
@@ -135,12 +138,12 @@ nav ul li , .user-area a{
     justify-content: space-between;
 }
 .products-box{
-    background-color: rgb(209, 209, 209);
     flex-basis: 25%;
     overflow: hidden;
     position: relative;
     z-index: 0;
     border-radius: 35px 0 35px;
+    box-shadow: 5px 5px 5px 50px #0c0b5b ;
 
 }
 .products-box::after{
@@ -199,23 +202,19 @@ nav ul li , .user-area a{
 }
 
 .trending-part-two{
-    height: 80%;
+    height: 75%;
     margin-top: 2%;
     display: flex;
     justify-content: space-between;
-    background-color: rgb(0, 0, 0);
     text-align: center;
 }
 .trend-box{
     flex-basis: 24%;
-    background-color: rgb(88, 196, 30);
-    position: relative; 
+    position: relative;
 }
 .trend-box img{
     width: 100%;
-    height: 75%;
-    background-color: rgb(204, 204, 204);
-   
+    height: 70%;
 }
 
 .product-navigation-links{
@@ -252,7 +251,7 @@ nav ul li , .user-area a{
     margin: 50px auto;
     border-top: 2px solid;
     border-bottom: 2px solid;
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -286,7 +285,6 @@ nav ul li , .user-area a{
 
 .recommend-conatiner{
     height: 60vh;
-    background-color: burlywood;
     margin: auto;
     margin-bottom: 50px;
     text-align: center;
@@ -298,7 +296,6 @@ nav ul li , .user-area a{
 }
 .reco-title{
     padding-bottom: 35px;
-    background-color: aqua;
 }
 .reco-item{
     flex-basis: 24%;
@@ -310,7 +307,7 @@ nav ul li , .user-area a{
     background-color: beige;
 }
 .reco-item-navigation{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     display: inline-block;
     position: absolute;
     margin: -18% 20%;
@@ -326,6 +323,10 @@ nav ul li , .user-area a{
     transform: translateY(-10px);
     opacity: 1;
 }
+.product-title {
+    font-weight: 600;
+    color: black;
+}
 
 
 
@@ -333,7 +334,6 @@ nav ul li , .user-area a{
 
 .news-container{
     height: 80vh;
-    background-color: rgb(171, 171, 171);
     margin: auto;
 
 }
@@ -349,10 +349,10 @@ nav ul li , .user-area a{
 .news-card{
     color: aliceblue;
     flex-basis: 30%;
-    background-color: rgb(72, 72, 72);
+    color: black;
 }
 .news-card a{
-    color: aliceblue;
+    color: rgb(0, 0, 0);
 }
 .news-card img{
     background-color: aquamarine;
@@ -381,7 +381,7 @@ nav ul li , .user-area a{
     background-color: rgb(255, 255, 255);
     height: 25vh;
     margin: auto;
-    /* text-align: center; */
+    text-align: center;
     display: flex;
     justify-content: space-between;
 }
@@ -391,13 +391,12 @@ nav ul li , .user-area a{
 }
 .adv-item i{
     font-size: 45px;
-    color: rgb(152, 152, 152);
-    position: relative;
-    left: 25%;
+    color: rgb(28, 17, 62);
+    text-align: center;
 }
 .adv-item h4{
     padding: 15px 0 10px 0px;
-    text-align: center;
+
 }
 
 
@@ -407,6 +406,7 @@ nav ul li , .user-area a{
     height: 55vh;
     width: 100%;
     background-color: rgb(0, 0, 0);
+    border-radius: 19px 19px 0px 0px;
 }
 .footer-elements-parent{
     height: 100%;
@@ -422,6 +422,7 @@ nav ul li , .user-area a{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 .newsletter{
     line-height: 2;
@@ -448,7 +449,8 @@ nav ul li , .user-area a{
     letter-spacing: 1.5px;
 }
 .social-icons i{
-    color: white;
+    color: rgb(0, 145, 255);
+    font-size: 23px;
 }
 
 
@@ -462,12 +464,11 @@ nav ul li , .user-area a{
     justify-content: space-between;
     align-items: center;
 }
-.img-box{
+.logo-box{
     width: 150px;
     height: 40px;
     position: relative;
     top: -80px;
-    background-color: blueviolet;
 }
 .links-column a{
     display: block;
@@ -476,7 +477,6 @@ nav ul li , .user-area a{
 }
 .links-column h3{
     padding-bottom: 25px;
-    background-color: brown;
 }
 
 
