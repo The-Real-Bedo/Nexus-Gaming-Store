@@ -36,7 +36,7 @@
 
 
         <div class="header-container-two container">
-            <div class="logo">NEXUS</div>
+            <div class="logo">NEXUS<br><span style="letter-spacing: 16px; font-weight: 900;">GAMING</span></div>
 
             <div class="navigation">
                 <nav>
@@ -107,7 +107,9 @@
 
     <br><br><br>
 
-    <section> <!-- section two -->
+    <section class="trending-section"> <!-- section two -->
+        <i class="fa-solid fa-chevron-left trending-left-icon"></i>
+        <i class="fa-solid fa-chevron-right trending-right-icon"></i>
         <div class="trending-container container">
 
             <div class="trending-part-one"><!-- trending-part-one -->
@@ -115,7 +117,7 @@
                 <div class="switch-links">
                     <a href="">Gaming Gear</a>
                     <a href="">Latest</a>
-                    <a href="">Top Rated</a>
+                    <a href="" class="active">Top Rated</a>
                     <a href="">High Performance</a>
                 </div>
             </div><!-- /trending-part-one -->
@@ -128,9 +130,9 @@
                 <div class="trending-products1 trend-box">
                     <img src="./assets/RTX.jpg" alt="">
                     <div class="product-navigation-links">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <i class="fa-regular fa-heart"></i>
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href=""><i class="fa-regular fa-heart"></i></a>
+                        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                     </div>
                     <a href="" class="product-title">NVIDIA RTX 5090C</a><br>
                     <span class="price">$2199.00</span> <span class="old-price"><del>$2499.99</del></span>
@@ -139,9 +141,9 @@
                 <div class="trending-products2 trend-box">
                     <img src="./assets/mechKey.jpg" alt="">
                     <div class="product-navigation-links">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <i class="fa-regular fa-heart"></i>
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href=""><i class="fa-regular fa-heart"></i></a>
+                        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                     </div>
                     <a href="" class="product-title">Razer BlackWidow V4</a><br>
                     <span class="price">$179.99 </span> <span class="old-price"><del>$199.99</del></span>
@@ -150,9 +152,9 @@
                 <div class="trending-products3 trend-box">
                     <img src="./assets/Headset.jpg" alt="">
                     <div class="product-navigation-links">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <i class="fa-regular fa-heart"></i>
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href=""><i class="fa-regular fa-heart"></i></a>
+                        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                     </div>
                     <a href="" class="product-title">SteelSeries Arctis Nova</a><br>
                     <span class="price">$129.99</span> <span class="old-price"><del>$149.99</del></span>
@@ -161,9 +163,9 @@
                 <div class="trending-products4 trend-box">
                     <img src="./assets/monitor.jpg" alt="">
                     <div class="product-navigation-links">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <i class="fa-regular fa-heart"></i>
-                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <a href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href=""><i class="fa-regular fa-heart"></i></a>
+                        <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
                     </div>
                     <a href="" class="product-title">Samsung Odyssey G5</a><br>
                     <span class="price">$899.99</span> <span class="old-price"><del>$1100.00</del></span>
@@ -174,6 +176,7 @@
             </div><!-- /trending-part-two -->
 
         </div><!-- trending-container -->
+        
     </section>
 
 
@@ -183,12 +186,12 @@
 
              <div class="customer-say">
                     <h2>What Gamers Say</h2>
-                    <p>“Nexus delivered my setup in just 2 days. The performance boost was insane and the quality exceeded expectations.”</p>
+                    <span>“Nexus delivered my setup in just 2 days. The performance boost was insane and the quality exceeded expectations.”</span>
                     
                     <div class="customer-info">
                         <div class="profile-pic"></div>
                         <h4>Chris Evans</h4>
-                        <span>Professional FPS Player</span>
+                        <p>Professional FPS Player</p>
                     </div>
              </div><!-- customer-say -->
 
@@ -200,7 +203,8 @@
     <section><!-- section four -->
         <div class="recommend-conatiner container">
             <div class="reco-title"><h2>Recommended For You</h2></div>
-
+            <i class="fa-solid fa-chevron-left items-left-arrow"></i>
+            <i class="fa-solid fa-chevron-right items-right-arrow"></i>
             <div class="items-parent">
 
                 <div class="recommended-item reco-item">
@@ -265,10 +269,10 @@
                     <img src="./assets/RTX2.jpg" alt="">
                     
                     <div class="news-card-content">
-                        <p>RTX / AI Gaming</p>
+                        <p><i class="fa-solid fa-tag"></i> RTX / AI Gaming</p>
                         <a href="">RTX 5090 Changes PC Gaming Forever</a>
                         <p>Discover how NVIDIA’s latest GPU delivers unmatched ray tracing and AI-powered gaming performance.</p>
-                        <a href="">Read More</a> <span class="news-date">21 May</span>
+                        <a href="">Read More</a>  <i class="fa-solid fa-arrow-right-long"></i>   <span class="news-date">17 May</span>
                     </div>
                 </div>
 
@@ -276,10 +280,10 @@
                     <img src="./assets/gta.jpg" alt="">
                     
                     <div class="news-card-content">
-                        <p>Gaming News</p>
+                        <p><i class="fa-solid fa-tag"></i> Gaming News</p>
                         <a href="">Top Upcoming Games of 2026</a>
                         <p>From GTA VI to futuristic RPGs, here are the biggest titles gamers are waiting for.</p>
-                        <a href="">Read More</a> <span class="news-date">21 May</span>
+                        <a href="">Read More</a>  <i class="fa-solid fa-arrow-right-long"></i>   <span class="news-date">5 May</span>
                     </div>
                 </div>
 
@@ -287,10 +291,10 @@
                     <img src="./assets/setup.jpg" alt="">
                     
                     <div class="news-card-content">
-                        <p>Custom PCs</p>
+                        <p> <i class="fa-solid fa-tag"></i> Custom PCs</p>
                         <a href="">Build The Ultimate RGB Setup</a>
                         <p>Tips and inspiration to create a clean, immersive, and powerful gaming battlestation.</p>
-                        <a href="">Read More</a> <span class="news-date">21 May</span>
+                        <a href="">Read More</a>  <i class="fa-solid fa-arrow-right-long"></i>   <span class="news-date">10 May</span>
                     </div>
                 </div>
 
@@ -363,7 +367,7 @@
 
             <div class="footer-part-two">
                 <div class="links-column logo-box">
-                    <span>NEXUS GAMING</span>
+                    <div class="logo">NEXUS<br><span style="letter-spacing: 16px; font-weight: 900;">GAMING</span></div>
                 </div>
 
                 <div class="links-column">
