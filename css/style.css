@@ -188,7 +188,7 @@ nav ul li:hover , .user-area a:hover{
     height: 150%;
 }
 /* container two */
-nav ul li:not(.dropdown-list ul li)::before {
+nav ul li::before {
     content: "";
     position: absolute;
     left: 0;
@@ -203,7 +203,7 @@ nav ul li:not(.dropdown-list ul li)::before {
 nav ul li:hover::before{
     height: 100%;
 }
-nav ul li:not(.dropdown-list ul li)::after {
+nav ul li::after {
     content: "";
     position: absolute;
     left: 0;
