@@ -10,17 +10,13 @@
     background-repeat: no-repeat;
     font-family: 'chonkypixels'; 
 }
-
-
-/*     F O N T S */
-
+/*------------------- F O N T S ---------------------*/
  @font-face {
     font-family: 'astron'; 
     src: url('../assets/fonts/astron-valley.regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
-
 @font-face {
     font-family: 'chonkypixels'; 
     src: url('../assets/fonts/chonkypixels.medium.ttf') format('truetype');
@@ -33,15 +29,8 @@
     font-weight: normal;
     font-style: normal;
 }
-h2,h3{
-    font-family: 'gameblinkdemo'; 
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-
-/* ---------------------Header------------------------- */
- .container{    /* ---> Global */
+/* --------------- Global ------------------------ */
+.container{    
     width: 85%;
 }
 button{
@@ -52,8 +41,16 @@ body{
     color: aliceblue;
     overflow-x: hidden;
 }
-
-
+:-webkit-any(a){
+    text-decoration: none;
+    color: aliceblue;
+}
+h2,h3{
+    font-family: 'gameblinkdemo'; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+/* ---------------------Header------------------------- */
 header{
     background-image: -webkit-linear-gradient( left ,rgb(0, 61, 152),rgb(9, 6, 37),rgb(4, 1, 26));
     position: fixed;
@@ -73,26 +70,15 @@ header{
     font-family: 'Arial', sans-serif;
     position: relative;
     top: 2px;
-    margin: 0px 8px;
+    margin: 0px 10px;
     color: rgb(255, 255, 255);
 }
-.links a::after, .links a::before{
-    content: "";
-    width: 1.5px;
-    height: 0;
-    background-color: red;
-    position: absolute;
-    bottom: -25%;
-    transition: .5s;
-    right: -5px;
-
+.links a:hover{
+    color: rgb(119, 198, 0);
 }
-.links a::before{
-    top: -25%;
-    left: -5px;
-}
-.links a:hover::after , .links a:hover::before{
-    height: 150%;
+.links a i:hover{
+    transform: rotateY(180deg);
+    transition: 0.1s;
 }
 
 .header-container-two{
@@ -116,22 +102,46 @@ header{
 nav ul li{
     display: inline;
     font-size: 13.5px;
-    margin: 0 15px;
+    margin: 0 10px;
     color: rgb(255, 255, 255);
-}
-:-webkit-any(a){    /* global */
-    text-decoration: none;
-    color: aliceblue;
+    position: relative;
+    padding: 10px;
 }
 .user-area a{
     margin: 0 6px;
+    display: inline-block;
+}
+.user-area{
+    position: relative;
+}
+.user-area::after{
+    content: "3";
+    font-weight: 900;
+    padding: 1px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    left: 80px;
+    top: -3px;
+    z-index: 3;
+    transition: 0.5s;
+}
+.user-area:hover::after{
+    top: -6px;
 }
 nav ul li , .user-area a{
-    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    letter-spacing: 1.3px;
     position: relative;
     top: 18px;
 }
-
+nav ul li:hover , .user-area a:hover{
+    color: greenyellow;
+}
 .header-container-three{
     font-weight: 900;
     text-align: center;
@@ -149,24 +159,110 @@ nav ul li , .user-area a{
     transform: scale(1)
 }
 @keyframes move {
-    50%{
-        transform: rotateZ(0deg);    
-    }
-    55%{
-        transform: scale(2) rotateZ(40deg);
-    }
-    60%{
-        transform: scale(2) rotateZ(-60deg);
-    }
-    65%{
-        transform: scale(1);
-    }
+    50%{ transform: rotateZ(0deg); }
+    55%{ transform: scale(1.7) rotateZ(40deg); }
+    60%{ transform: scale(1.7) rotateZ(-60deg); }
+    65%{ transform: scale(1); }
 }
 .sale:hover{
     text-decoration: underline;
     transition: 0.5s;
 }
+/* ---------------- header psuedo elements ----------------- */
+/* container one */
+.links a::after, .links a::before{
+    content: "";
+    width: 1.5px;
+    height: 0;
+    background-color: greenyellow;
+    position: absolute;
+    bottom: -25%;
+    transition: .5s;
+    right: -5px;
+}
+.links a::before{
+    top: -25%;
+    left: -4px;
+}
+.links a:hover::after , .links a:hover::before{
+    height: 150%;
+}
+/* container two */
+nav ul li:not(.dropdown-list ul li)::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%; 
+    height: 0;
+    bottom: 0px;
+    border-radius: 2px;
+    border-left: 1.5px solid greenyellow;
+    border-right: 1.5px solid greenyellow;
+    transition: 0.5s;
+}
+nav ul li:hover::before{
+    height: 100%;
+}
+nav ul li:not(.dropdown-list ul li)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0; 
+    height: 100%;
+    bottom: 0px;
+    border-radius: 2px;
+    border-top: 1.5px solid greenyellow;
+    border-bottom: 1.5px solid greenyellow;
+    transition: 0.5s;
+}
+nav ul li:hover::after{
+    width: 100%;
+}
+/* -------------dropdown----------- */
+.dropdown-list{
+    position: absolute;
+    background-color: #0f0839;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 4;
+    height: 165px;
+    gap: 20px;
+    padding: 15px;
+    border: 2px solid rgb(32, 0, 119);
+    opacity: 0;
+    transition: 1s;
+    transform: translate(280px, 5px) scale(0.1);
+    
+    visibility: hidden;
+    opacity: 0;
+}
+.more-menu:hover .dropdown-list{
+    transform: scale(1) translate(280px, 5px);
+    border-color: greenyellow;
+    visibility: visible;
+    opacity: 1;
+}
 
+.dropdown-list ul li{
+    font-weight: 600;
+    display: block;    
+    font-size: 12px;
+    font-family: 'chonkypixels';
+    margin: 10px 0px;
+    padding: 0;
+}
+.dropdown-list .list-one li:first-child, .dropdown-list .list-two li:first-child{
+    border-bottom: 1px dotted;
+    display: inline-block;
+    margin-top: -20px;
+}
+.dropdown-list ul .element1{
+    margin-top:  10px;
+}
+
+
+/* -------------------- main section ------------------- */
 .main-container{
     height: 100vh;
     position: relative;
@@ -187,7 +283,6 @@ nav ul li , .user-area a{
     border: none;
     outline: none;
     padding-top: 15%;
-    /* background-color: #33ff00; */
     animation: heroMove 1s ease 1;
 }
 @keyframes heroMove {
@@ -195,16 +290,14 @@ nav ul li , .user-area a{
         display: none;
         transform: translateY(50vh);
     }
-    100%{
-        transform: translateY(0);
-        display: block;
-    }
+    100%{ transform: translateY(0);
+          display: block }
 }
 .main-img-hero{
     padding-left: 150px;
     padding-top: 80px;
     width: 100%;
-    height: 100%;
+    height: 100%; 
 }
 .main-img-hero img{
     width: 100%;
@@ -215,12 +308,10 @@ nav ul li , .user-area a{
 @keyframes moveLeft {
     0%{
         visibility: hidden;
-        transform: translateX(50vw);
-    }
+        transform: translateX(50vw); }
     100%{
         transform: translateX(0);
-        visibility: visible;
-    }
+        visibility: visible; }
 }
 .main-title , .main-par{
     margin: 30px 0;
@@ -239,8 +330,6 @@ nav ul li , .user-area a{
     box-shadow: 2px 2px 6px rgb(255, 255, 255);
     transition: 0.2s;
 }
-
-
 .main-btn:hover{
     transform: scale(1.03) translate(-2px,-5px);
     box-shadow: 4px 7px 2px 0.2px rgb(255, 255, 255);
@@ -255,22 +344,7 @@ nav ul li , .user-area a{
     padding: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ----------------------- products conatiner (1st section) -------------------------*/
 .products-container{
     margin-top: 50px;
     height: 45vh;
@@ -290,7 +364,6 @@ nav ul li , .user-area a{
 }
 .products-box:hover{
     border: 2px solid rgb(0, 255, 0);
-    /* box-shadow: 0 0 10px 1px greenyellow; */
     box-shadow: greenyellow 0px 20px 50px -10px;
     transform: scale(1.05);
 }
@@ -307,8 +380,7 @@ nav ul li , .user-area a{
 }
 .products-box:hover .content{
     transform: translateY(-40%); 
-    line-height: 2.2;
-    
+    line-height: 2.2; 
 }
 .content{
     text-align: center;
@@ -343,22 +415,7 @@ nav ul li , .user-area a{
 .products-PC-section{
     background-image: url(../assets/custome.jpg);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ------------------------ TRENDING CONTAINER ------------------ */
 .trending-container{
     height: 70vh;
     margin: auto;
@@ -384,7 +441,6 @@ nav ul li , .user-area a{
     border-bottom: 2px solid rgb(30, 255, 0);
     padding-bottom: 15px;
 }
-
 .trending-part-two {
     height: 65%;
     margin-top: 4%;
@@ -392,7 +448,6 @@ nav ul li , .user-area a{
     justify-content: space-between;
     text-align: center;
 }
-
 .trending-section{
     position: relative;
 }
@@ -408,7 +463,11 @@ nav ul li , .user-area a{
 .trending-right-icon{
     right: 80px;
 }
-
+.trending-left-icon:hover , .trending-right-icon:hover, .rate-container i:hover,
+.items-left-arrow:hover, .items-right-arrow:hover{
+    color: greenyellow;
+    cursor: pointer;
+}
 .trend-box{
     flex-basis: 24%;
     position: relative;
@@ -423,17 +482,35 @@ nav ul li , .user-area a{
     border: 2px solid rgb(0, 255, 0);
     box-shadow: 0 0 10px 1px greenyellow;
 }
-
 .trend-box a, .reco-item a, .news-card a:first-of-type, .adv-item h4{
     font-family: 'Arial', sans-serif;
 }
-
-.trend-box img{
+.trend-box .img{
     width: 90%;
     height: 60%;
-    object-fit: contain;
+    margin: auto;
     margin-top: 30px;
     margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+.trend-box .img::after{
+    content: " SALE ENDS SOON";
+    padding-top: 35%;
+    font-weight: 900;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.527);
+    color: greenyellow;
+    transform: rotateY(90deg);
+}
+.trend-box:hover .img::after{
+    transform: rotateY(0deg);
+    transition: 1s;
 }
 .trend-box .product-title ,.reco-item .product-title{
     line-height: 2.5;
@@ -452,10 +529,12 @@ nav ul li , .user-area a{
     color: rgb(255, 62, 62);
     font-weight: 600;
 }
-.product-navigation-links{
-    background-color: rgb(0, 0, 0);
+/* ----------  products container & recommen container -------------*/
+.product-navigation-links, .reco-item-navigation{
+    background-color: rgb(30, 136, 0);
     display: inline-block;
     position: absolute;
+    z-index: 5;
     margin: -18% 15%;
     width: 60%;
     height: 10%;
@@ -464,49 +543,38 @@ nav ul li , .user-area a{
     justify-content: space-around;
     transition: 1s;
     opacity: 0;
-    
+    border-radius: 5px;
+    border: 2px solid greenyellow;
 }
-.trend-box:hover .product-navigation-links{
+.trend-box:hover .product-navigation-links, .reco-item:hover .reco-item-navigation{
     transform: translateY(-10px);
-    opacity: 1;
-    
+    opacity: 1; 
 }
-
-.product-navigation-links a {
+.product-navigation-links a, .reco-item-navigation a {
     color: rgb(255, 255, 255);
     position: relative;
-    top: 15%;
+    top: 20%;
+    transition: 0.5s;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.product-navigation-links a:hover, .reco-item-navigation a:hover{
+    transform: scale(1.2);
+    color: black;
+}
+/* ----------- ------ rate container ------------------ */
 .rate-container{
     width: 100%;
     height: 45vh;
     margin: 50px auto;
-    border-top: 2px solid greenyellow;
-    border-bottom: 2px solid greenyellow;
+    border-top: 2px solid rgb(32, 0, 119);
+    border-bottom: 2px solid rgb(32, 0, 119);
     background-color: rgba(15, 10, 57, 0.279);
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: center;    
+    transition: 1s;
+}
+.rate-container:hover{
+    border-color: greenyellow;
 }
 .customer-say{
     width: 50%;
@@ -527,9 +595,9 @@ nav ul li , .user-area a{
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    background-color: black;
+    background-image: url(../assets/rate-person.jpg);
     position: relative;
-    left: -16%;
+    left: -17%;
     top: 45px;
 }
 .customer-info{
@@ -539,23 +607,7 @@ nav ul li , .user-area a{
     margin-left: 47%;
     text-align: left;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* -------------------- recommend container -------------- */
 .recommend-conatiner{
     height: 60vh;
     margin: auto;
@@ -570,8 +622,8 @@ nav ul li , .user-area a{
 }
 .reco-title{
     padding-bottom: 35px;
+    font-weight: 600;
 }
-
 .recommend-conatiner{
     position: relative;
 }
@@ -586,70 +638,50 @@ nav ul li , .user-area a{
 .items-right-arrow{
     right: -30px;
 }
-
 .reco-item{
     padding: 10px;
     border-radius: 10px;
     flex-basis: 24%;
     position: relative;
     border: 2px solid rgb(32, 0, 119);
-     background-color: rgb(4, 4, 42);
-     transition: 0.5s;
+    background-color: rgb(4, 4, 42);
+    transition: 0.5s;
 }
-.reco-item img{
+.reco-item .reco-img{
     width: 90%;
     height: 70%;
-    object-fit: contain;
-    border-radius: 10px;
+    border-radius: 10px;    
+    background-size: 90%;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
 }
-.reco-item-navigation{
-    background-color: rgb(0, 0, 0);
-    display: inline-block;
+.reco-item .reco-img::after{
+    content: "SALE END SOON";
+    padding-top: 40%;
+    font-weight: 900;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     position: absolute;
-    margin: -18% 15%;
-    width: 60%;
-    height: 10%;
-    font-size: 20px;
-    display: flex;
-    justify-content: space-around;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.527);
+    color: greenyellow;
+    transform: translateY(-100%);
+}
+.reco-item:hover .reco-img::after{
+    transform: translateY(0);
     transition: 1s;
-    opacity: 0;
-}
-.reco-item:hover .reco-item-navigation{
-    transform: translateY(-10px);
-    opacity: 1;
-}
-.product-title {
-    font-weight: 600;
-    color: black;
 }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* ------------------ news container -------------------- */
 .news-container{
     height: 80vh;
     margin: auto;
     padding-top: 25px;
-
 }
 .news-title{
     text-align: center;
@@ -662,7 +694,8 @@ nav ul li , .user-area a{
 }
 .news-card{
     flex-basis: 30%;
-    color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);    
+
 }
 .news-card a{
     color: rgb(255, 255, 255);
@@ -670,35 +703,37 @@ nav ul li , .user-area a{
 .news-card-content a:first-of-type{
     color: rgb(251, 0, 255);
 }
-
-
 .news-card img{
     width: 100%;
     height: 60%;
-    border-radius: 10px;
+    border-radius: 10px;    
+    transition: 0.5s;
+}
+.news-card:hover img{    
+    
+    transform: scale(1.1);
 }
 .news-card p{
     padding: 20px 0px;
-}
-.news-card-content p:first-of-type, .news-card-content a:last-of-type{
-    color: rgb(47, 255, 196);
-    font-size: 13px;
 }
 .news-card-content  i{
     color: rgb(47, 255, 196);
     font-size: 10px;
 }
+.news-card-content p:first-of-type, .news-card-content a:last-of-type{
+    color: rgb(47, 255, 196);
+    font-size: 13px;
+}
+.news-card-content a:last-of-type:hover{
+    color: greenyellow;
+}
+
 .news-card .news-date{
     float: right;
     font-size: 12px;
     margin-right: 10px;
 }
-
-/* --------------------------------------------------------------------------- */
-
-
-
-
+/* ------------------------ advantages container (icons) -------------------------------- */
 .advantages-container{
     height: 25vh;
     margin: auto;
@@ -720,18 +755,7 @@ nav ul li , .user-area a{
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+/* --------------------- F O O T E R -------------------------*/
 .footer-container{
     height: 55vh;
     width: 100%;
@@ -743,16 +767,13 @@ nav ul li , .user-area a{
     margin: auto;
 
 }
-
-
 .footer-part-one{
     border-top: 1px solid rgb(51, 51, 51);
     color: aliceblue;
     height: 10vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    
+    align-items: center;   
 }
 .newsletter{
     line-height: 2;
@@ -763,6 +784,7 @@ nav ul li , .user-area a{
 .email-box input{
     height: 35px;
     width: 340px;
+    letter-spacing: 1.2px;
     border: none;
     outline: none;
     padding-left: 10px;
@@ -808,8 +830,6 @@ nav ul li , .user-area a{
 .payments i{
     font-size: 23px;
 }
-
-
 .footer-part-two {
     color: aliceblue;
     border-bottom: 1px solid white;
@@ -837,15 +857,11 @@ nav ul li , .user-area a{
     border-left: 2px solid greenyellow;
     border-radius: 13px;
     padding-left: 4px;
-    transition: 0.2s;
-    
+    transition: 0.3s; 
 }
 .links-column h3{
-    padding-bottom: 25px;
+    padding-bottom: 18px;
 }
-
-
-
 .footer-part-three{
     color: rgb(255, 255, 255);
     text-align: center;
